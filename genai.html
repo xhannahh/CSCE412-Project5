@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <meta charset = "utf-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+<head>
+  <title>Gen AI</title>
+</head>
+<body style="margin:0;background:#e74c3c;font-family:Arial;display:flex;flex-direction:column;height:100vh;">
+
+  <!-- Nav Bar -->
+  <div style="background:#c0392b;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:4px solid #333;">
+    <div style="display:flex;align-items:center;">
+      <div style="width:40px;height:40px;border-radius:50%;background:#27ae60;border:4px solid #333;margin-right:10px;"></div>
+    <a href="index.html" style="color:white;font-size:20px;margin:0;text-decoration:none;font-weight:bold;">Pokédex UI</a>
+    </div>
+    <div style="display:flex;gap:15px;">
+      <a href="portfolio.html" style="color:white;text-decoration:none;font-weight:bold;">Portfolio</a>
+      <a href="qualifications.html" style="color:white;text-decoration:none;font-weight:bold;">Qualifications</a>
+      <a href="services.html" style="color:white;text-decoration:none;font-weight:bold;">Services</a>
+      <a href="genai.html" style="color:white;text-decoration:none;font-weight:bold;">Gen AI</a>
+    </div>
+  </div>
+
+  <!-- Main Pokédex Container -->
+  <div style="flex:1;display:flex;justify-content:center;align-items:center;">
+    <div style="background:#e74c3c;border:4px solid #333;border-radius:10px;width:420px;height:520px;position:relative;box-shadow:4px 4px 12px rgba(0,0,0,0.5);">
+      
+      <!-- Top lid -->
+      <div style="background:#e74c3c;height:100px;border-bottom:4px solid #333;display:flex;justify-content:center;align-items:center;">
+        <div style="width:60px;height:60px;border-radius:50%;background:#27ae60;border:6px solid #c0392b;"></div>
+      </div>
+
+      <!-- Screen -->
+      <div id="screen" 
+           style="background:#ecf0f1;width:80%;height:200px;margin:20px auto;
+                  border:4px solid #333;border-radius:6px;padding:10px;text-align:center;
+                  overflow:hidden;
+                  font-family:monospace;">
+        <h2 id="poke-name" style="margin:5px 0;">Vaporeon</h2>
+        <img id="poke-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/134.png" style="width:100px;height:100px;">
+        <p id="poke-desc" style="font-size:14px;">Vaporeon has the ability to freely control water. Its body structure is similar to that of water molecules.</p>
+      </div>
+
+      <!-- D-Pad Controls -->
+      <div style="position:absolute;bottom:20px;right:20px;width:120px;height:120px;display:flex;justify-content:center;align-items:center;">
+        <!-- Center block -->
+        <div style="width:40px;height:40px;background:#333;border-radius:6px;position:absolute;"></div>
+
+        <!-- Up -->
+        <button onclick="prevPokemon()" 
+          style="position:absolute;top:0;width:40px;height:40px;background:#333;color:#fff;border:none;border-radius:6px;cursor:pointer;">▲</button>
+        <!-- Down -->
+        <button onclick="nextPokemon()" 
+          style="position:absolute;bottom:0;width:40px;height:40px;background:#333;color:#fff;border:none;border-radius:6px;cursor:pointer;">▼</button>
+        <!-- Left -->
+        <button onclick="randomPokemon()" 
+          style="position:absolute;left:0;width:40px;height:40px;background:#333;color:#fff;border:none;border-radius:6px;cursor:pointer;">◀</button>
+        <!-- Right -->
+        <button onclick="firstPokemon()" 
+          style="position:absolute;right:0;width:40px;height:40px;background:#333;color:#fff;border:none;border-radius:6px;cursor:pointer;">▶</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prompt Box -->
+  <div style="background:#c0392b;height:150px;border-top:4px solid #333;display:flex;align-items:center;justify-content:center;padding:10px;">
+     <textarea id="promptBox" readonly
+      style="width:90%;height:100px;padding:10px;border:3px solid #333;border-radius:6px;
+             font-size:14px;
+           font-family:monospace;
+             resize:none;">Use the Kanto Pokedex to create a Pokedex inspired UI. I want the arrow buttons to be a Pokédex-style D-Pad with up, down, left, and right arrows on the right side to be responsive and change what information gets displayed on the screen in the middle. Make all the Pokemon displayed in the Pokedex Eeveelutions. Add a textbox at the bottom of the page that shows the prompt I inputted into the model, and ensure that the same font is used for the Pokedex screen and this text box. Also, create a matching nav bar for this Pokedex inspired UI. Use only inline CSS.
+    </textarea>
+  </div>
+
+<script>
+  const pokedex = [
+    {name:"Vaporeon",img:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/134.png",desc:"Vaporeon has the ability to freely control water. Its body structure is similar to that of water molecules."},
+    {name:"Jolteon",img:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/135.png",desc:"Jolteon’s cells generate a low level of electricity, which is amplified by its fur."},
+    {name:"Flareon",img:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/136.png",desc:"Flareon’s fluffy fur has a high insulation quality, keeping it safe from high temperatures."},
+    {name:"Espeon",img:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/196.png",desc:"Espeon uses the fine hair that covers its body to sense air currents and predict its opponent’s moves."},
+    {name:"Umbreon",img:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/197.png",desc:"Umbreon lurks in the dark and waits for its opponents, glowing patterns on its body shining as it strikes."},
+    {name:"Leafeon",img:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/470.png",desc:"Leafeon’s cells are like those of plants, performing photosynthesis to create clean air."},
+    {name:"Glaceon",img:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/471.png",desc:"Glaceon can freeze its fur into sharp needles and launch them at opponents."},
+    {name:"Sylveon",img:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/700.png",desc:"Sylveon wraps its ribbon-like feelers around its trainer’s arm to communicate affection."}
+  ];
+
+  let index = 0;
+
+  function updateScreen() {
+    document.getElementById("poke-name").innerText = pokedex[index].name;
+    document.getElementById("poke-img").src = pokedex[index].img;
+    document.getElementById("poke-desc").innerText = pokedex[index].desc;
+  }
+
+  function prevPokemon() {
+    index = (index - 1 + pokedex.length) % pokedex.length;
+    updateScreen();
+  }
+
+  function nextPokemon() {
+    index = (index + 1) % pokedex.length;
+    updateScreen();
+  }
+
+  function randomPokemon() {
+    index = Math.floor(Math.random() * pokedex.length);
+    updateScreen();
+  }
+
+  function firstPokemon() {
+    index = 0;
+    updateScreen();
+  }
+</script>
+</body>
+</html>

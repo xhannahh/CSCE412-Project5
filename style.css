@@ -1,0 +1,329 @@
+@font-face {
+    font-family: 'PokemonFont';
+    src: url('assets/fonts/PokemonFont.woff2') format('woff2'),
+         url('assets/fonts/PokemonFont.woff') format('woff'),
+         url('assets/fonts/PokemonFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Korataki';
+    src: url('assets/fonts/Korataki.woff2') format('woff2'),
+         url('assets/fonts/Korataki.woff') format('woff'),
+         url('assets/fonts/Korataki.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'PokemonFont', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main{
+    padding: 30px;
+}
+
+nav{
+    background-color: transparent;
+}
+nav ul{
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav li{
+    height: 50px;
+}
+nav a{
+    display: flex;
+    text-decoration: none;
+    color: black;
+    padding: 0 30px;
+    align-items: center;
+    height: 100%;
+}
+
+nav li:first-child{
+    margin-right: auto;
+}
+
+.nav-icon{
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+#main-icon{
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-top: 3px;
+}
+
+/* Background colors for each page */
+body.page-index{ background-color: #c5a068; }
+body.page-portfolio{ background-color: #73cfea; }
+body.page-qualifications{ background-color: #f6d169; }
+body.page-services{ background-color: #ec8146; }
+
+/* Nav bar hover colors for each page */
+body.page-index nav a:hover{ background-color: rgba(255,255,255,0.6); }
+body.page-portfolio nav a:hover{ background-color: rgba(0,123,255,0.12); }
+body.page-qualifications nav a:hover{ background-color: rgba(203, 174, 115, 0.16); }
+body.page-services nav a:hover{ background-color: rgba(255,193,7,0.15); }
+
+/* Greeting Section */
+.greeting{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 16px;
+    position: relative;
+}
+
+.greeting-text h1{
+    font-family: 'Korataki', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: normal;
+    color: #EFDBB6;
+    -webkit-text-stroke: 2px lightgray;
+    font-size: 7rem;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.greeting-text p{
+    margin-bottom: 50px;
+}
+
+.greeting-image{
+    margin-left: auto;
+}
+
+/* .greeting-image img{
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    vertical-align: middle;
+    cursor: pointer;
+} */
+
+.eevee-image{
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.vaporeon-image{
+    width: 310px;
+    height: 310px;
+    object-fit: contain;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.jolteon-image{
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.flareon-image{
+    width: 310px;
+    height: 310px;
+    object-fit: contain;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-top: -20px;
+}
+
+.speech-bubble {
+    position: absolute;
+    right: 170px;
+    top: -25px;
+    z-index: 2;
+    width: 380px; 
+    display: block;
+}
+
+.speech-bubble img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+}
+
+/* About Me */
+.about-me h3{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-me-border{
+    border: 100px solid transparent;
+    border-image: url("assets/eeveetext.png") 60 120 60 120 fill round; 
+    padding: 0 5px 0 5px; 
+}
+
+.about-me{
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin: -65px -53px ;
+}
+
+/* Projects */
+.projects h3{
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Qualifications */
+.skills h3{
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.interests h3{
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Services */
+.services h3{
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Cards */
+.cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.card{
+    width: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 20px;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.card img{
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.card-description{
+    padding: 10px;
+}
+
+.card-description h4{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.project-cards{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.project-cards img{
+    width: 700px;
+    height: 600px;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+.image-carousel{    
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.image-carousel img{
+    width: 300px;
+    max-height: 200px;
+    object-fit: cover;
+    vertical-align: middle;
+    border-radius: 12px;
+}
+
+button img.icon{
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-bottom: 3px;
+    margin-right: 8px;
+}
+
+button{
+    font-family: 'PokemonFont', system-ui, sans-serif;
+    background-color: white;
+    color: black;
+    border: 1px solid rgba(0,0,0,0.08);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+button:hover{
+    background-color: #f5f5f5;
+}
+
+
+
+/* Footer */
+footer{
+    padding:20px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+footer a{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+footer img.footer-icon{
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-top: 3px;
+    margin-right: 8px;
+}

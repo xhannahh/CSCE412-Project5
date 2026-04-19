@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <meta charset = "utf-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <head>
+        <title> Qualifications </title>
+        <link id = "style1" rel="stylesheet" href="style.css">
+    </head>
+    <body class="page-qualifications">
+        <nav>
+			<ul>
+				<li><a href = "index.html"><img src = "assets/bestfriendsribbon.png" id = "main-icon">Hannah He</a></li>
+				<li><a href = "portfolio.html"><img src = "assets/waterstone.png" id = "portfolioIcon" class = "nav-icon">Portfolio</a></li>
+				<li class = "current-page"><a href = "qualifications.html"><img src = "assets/thunderstone.png" id = "qualificationsIcon" class = "nav-icon">Qualifications</a></li>
+				<li><a href = "services.html"><img src = "assets/firestone.png" id = "servicesIcon" class = "nav-icon">Services</a></li>
+				<li><a href = "genai.html"><img src = "assets/dawnstone.png" class = "nav-icon">GenAI</a></li>
+			</ul>
+		</nav>
+        <main>
+            <div>
+                <div class = "greeting">
+				
+                    <div class = "greeting-text">
+                        <h1> Qualifications </h1>
+                        <p> Check out my resume and LinkedIn profile for more details on my qualifications!</p>
+                        <button onclick = "location.href = 'https://drive.google.com/file/d/112M6wXRtBao8uC_Zuu_ReH8o7Vz5LS7c/view?usp=sharing'">
+                            <img src="assets/googledrive.png" alt="Google Drive" class="icon"> Download Resume
+                        </button>
+                        <button onclick = "location.href = 'https://www.linkedin.com/in/hannahwhe/'">
+                            <img src="assets/linkedin.png" alt="LinkedIn" class="icon"> LinkedIn
+                        </button>
+                    </div>
+                    <div class = "speech-bubble">
+					    <img id = "qualificationsSpeech" src = "assets/jolteonspeech.gif">
+				    </div>
+                    <div class = "greeting-image">
+                        <img id = "qualificationsImage" class = "jolteon-image" src = "assets/jolteon.gif" alt = "greeting image" onclick = "toggleStyleSheet()">
+                    </div>
+			    </div>
+            </div>
+            <div class = "skills">
+                <h3> Skills </h3>
+                <div class = "cards">
+                    <div class = "card">
+                        <img src = "assets/electricenergy.png" id = "languageIcon">
+                        <div class = "card-description">   
+                            <h4> Languages</h4>
+                            <p> I have strong proficiency across a range of programming languages, enabling me to adapt to different project needs and technology stacks. The programming languages I know include Python, C++, and Java for backend and algorithm-heavy work. For the frontend, I am proficient in HTML, CSS, JavaScript, and TypeScript. Finally, for managing and querying relational databases, I use SQL. This diverse toolkit allows me to work seamlessly on both front-end and back-end systems, bridging the gap between user-facing interfaces and robust server-side logic.</p>
+                        </div>
+                    </div>
+                    <div class = "card">
+                        <img src = "assets/fightingenergy.png" id = "techIcon">
+                        <div class = "card-description">
+                            <h4> Technologies </h4>
+                            <p> I am experienced in working with modern frameworks and libraries that accelerate development and enhance application performance. My frontend expertise includes React, Angular, Next.js, Tailwind CSS, and Bootstrap. On the backend, I've worked extensively with Node.js, Express.js, FastAPI, Spring Boot, and MongoDB, building RESTful APIs and efficient data-driven systems. I also have hands-on experience with LangChain for integrating AI capabilities into applications, enabling natural language understanding, and advanced chatbot functionalities.</p>
+                        </div>
+                    </div>
+                    <div class = "card">
+                        <img src = "assets/normalenergy.png" id = "devIcon">
+                        <div class = "card-description">
+                            <h4> Developer Tools</h4>
+                            <ul>
+                                <p>I have a solid background in industry-standard developer tools and collaborative workflows. I'm proficient with Git, GitHub, and Bitbucket for version control. For project management and documentation, I am experienced with Jira and Confluence. I also use SoapUI for API testing. Finally, I work effectively in Agile and Scrum environments, contributing to rapid iterations and adaptive planning. My ability to navigate diverse toolchains ensures smooth collaboration while maintaining high-quality, on-time deliverables.</p>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class = "interests">
+                <h3> Areas of Interest</h3>
+                <div class="cards">
+                    <div class="card">
+                        <img src = "assets/grassenergy.png" id = "fullstackIcon">
+                        <div class="card-description">
+                            <h4>Full-Stack Dev</h4>
+                            <p>I enjoy building applications from the ground up. I love designing front-end interfaces, developing back-end systems, and integrating them into cohesive, high-performing products that are scalable and maintainable.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src = "assets/psychicenergy.png" id = "aiIcon">
+                        <div class="card-description">
+                            <h4>AI / ML</h4>
+                            <p>I'm fascinated by AI/ML as it continues to evolve. I want to get more hands-on experience building intelligent systems that learn, adapt, and solve complex real-world problems. I also plan to explore frameworks like TensorFlow and PyTorch.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src = "assets/fairyenergy.png" id = "webIcon">
+                        <div class="card-description">
+                            <h4>Web Development</h4>
+                            <p>I am passionate about creating engaging, responsive, and accessible websites using modern frameworks and tools to craft seamless user experiences. I love to express my creativity through web development.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src = "assets/darkenergy.png" id = "cloudIcon">
+                        <div class="card-description">
+                            <h4>Cloud Computing</h4>
+                            <p>I am interested in leveraging cloud platforms to deploy scalable, secure, and reliable applications that speed development and enable global accessibility. I also plan to get my AWS certification.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+			<p>
+				<a href="mailto:hannahhe04@gmail.com">
+					<img src="assets/email.png" alt="Email" class="footer-icon"> Email
+				</a>
+			</p>
+			<p>
+				<a href="tel:+1-214-727-1571">
+					<img src="assets/phone-call.png" alt="Phone" class="footer-icon"> Call
+				</a>
+			</p>
+			<p>
+				<a href="https://discord.com/users/moonlitxluna">
+					<img src="assets/discord.png" alt="Discord" class="footer-icon"> Discord
+				</a>
+			</p>
+            <p>
+				<a href="https://open.spotify.com/user/xhannah%3B%29%29?si=536fb457387744de">
+					<img src="assets/spotify.png" alt="Spotify" class="footer-icon"> Spotify
+				</a>
+			</p>
+		</footer>
+        <script src = "script.js"></script>
+    </body>
+</html>

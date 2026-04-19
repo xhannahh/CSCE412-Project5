@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <meta charset = "utf-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <head>
+        <title> Portfolio </title>
+        <link id = "style1" rel="stylesheet" href="style.css">
+    </head>
+    <body class="page-portfolio">
+        <nav>
+			<ul>
+				<li><a href = "index.html"><img src = "assets/bestfriendsribbon.png" id = "main-icon">Hannah He</a></li>
+				<li class = "current-page"><a href = "portfolio.html"><img src = "assets/waterstone.png" id = "portfolioIcon" class = "nav-icon">Portfolio</a></li>
+				<li><a href = "qualifications.html"><img src = "assets/thunderstone.png" id = "qualificationsIcon" class = "nav-icon">Qualifications</a></li>
+				<li><a href = "services.html"><img src = "assets/firestone.png" id = "servicesIcon" class = "nav-icon">Services</a></li>
+				<li><a href = "genai.html"><img src = "assets/dawnstone.png" class = "nav-icon">GenAI</a></li>
+			</ul>
+		</nav>
+        <main>
+            <div>
+                <div class = "greeting">
+				
+                    <div class = "greeting-text">
+                        <h1> Portfolio </h1>
+                        <p> Projects I have worked on below or navigate to my GitHub page </p>
+                        <button class = "github-button" onclick = "location.href = 'https://github.com/xhannahh'"> <img src = "assets/github.png" alt = "GitHub Logo" class = "icon"> GitHub </button>
+                    </div>
+                    <div class = "speech-bubble">
+					    <img id = "portfolioSpeech" src = "assets/vaporeonspeech.gif">
+				    </div>
+                    <div class = "greeting-image">
+                        <img id = "portfolioImage" class = "vaporeon-image" src = "assets/vaporeon.gif" alt = "greeting image" onclick = "toggleStyleSheet()">
+                    </div>
+			    </div>   
+            </div>
+            <div class = "projects">
+                <h3> Completed Projects </h3>
+                <div class = "project-cards"> 
+                    <a href = "https://devpost.com/software/racecode"><img src = "assets/racecode.png"></a>
+                </div>
+                <h3> Prospective Projects </h3>
+                <div class = "project-cards"> 
+                    <img src = "assets/speech.png">
+                </div>
+            </div>
+            
+        </main>
+        <footer>
+			<p>
+				<a href="mailto:hannahhe04@gmail.com">
+					<img src="assets/email.png" alt="Email" class="footer-icon"> Email
+				</a>
+			</p>
+			<p>
+				<a href="tel:+1-214-727-1571">
+					<img src="assets/phone-call.png" alt="Phone" class="footer-icon"> Call
+				</a>
+			</p>
+			<p>
+				<a href="https://discord.com/users/moonlitxluna">
+					<img src="assets/discord.png" alt="Discord" class="footer-icon"> Discord
+				</a>
+			</p>
+            <p>
+				<a href="https://open.spotify.com/user/xhannah%3B%29%29?si=536fb457387744de">
+					<img src="assets/spotify.png" alt="Spotify" class="footer-icon"> Spotify
+				</a>
+			</p>
+		</footer>
+        <script src = "script.js"></script>
+    </body>
+</html>
